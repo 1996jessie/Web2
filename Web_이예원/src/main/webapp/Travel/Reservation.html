@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	body{
+		background: pink;
+	}
+</style>
+<script type="text/javascript">
+	var str = "입력한 항목은 " + "\n";
+	function check() {
+		if(f.name.value == "") {
+			alert("이름 누락");
+			f.name.focus();
+			return false;
+		}
+		if(f.email1.value == "") {
+			alert("이메일 앞부분 누락");
+			f.email1.focus();
+			return false;
+		}
+		if(f.email2.value == "") {
+			alert("이메일 뒷부분 누락");
+			return false;
+		}
+		if(f.phone1.value == "") {
+			alert("phone1 누락");
+			return false;
+		}
+		if(f.phone2.value == "") {
+			alert("phone2 누락");
+			f.phone2.focus();
+			return false;
+		}
+		if(isNaN(f.phone2.value)) {
+			alert("숫자로 입력");
+			f.phone2.select();
+			return false;
+		}
+		if(f.phone3.value == "") {
+			alert("phone3 누락");
+			f.phone3.focus();
+			return false;
+		}
+		if(isNaN(f.phone3.value)) {
+			alert("숫자로 입력");
+			f.phone3.select();
+			return false;
+		}
+		if(f.country.value == "") {
+			alert("나라 누락");
+			return false;
+		}
+		if(f.date.value == "") {
+			alert("date 누락");
+			return false;
+		}
+		if(f.number.value == "") {
+			alert("number 누락");
+			return false;
+		}
+		
+		str += "이름 : " + f.name.value + "\n";
+		str += "이메일 : " + f.email1.value + "@" + f.email2.value + "\n";
+		str += "전화번호 : " + f.phone1.value + "-" + f.phone2.value + "-" + f.phone3.value + "\n";
+		str += "나라 : " + f.country.value + "\n";
+		str += "날짜 : " + f.date.value + "\n";
+		str += "인원 : " + f.number.value + "\n";
+		
+		str += "옵션 : ";
+		var alen = f.airport.length;
+		var aflag = false;
+		for(i=0;i<alen;i++) {
+			if(f.airport[i].checked) {
+				aflag = true;
+				str += f.airport[i].value + " ";
+			}
+		}
+		if(aflag == false) {
+			alert("옵션 선택 누락");
+			return false;
+		}
+		
+		alert(str);
+		
+		
+	}
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+		<h3>여행 예약</h3>
+		<form action = "ReservationList.jsp" name = "f">
+			<p>
+				<label>예약자 성함</label>
+				<input type = "text" name = "name">
+			</p>
+			<p>
+				<label>이메일</label>
+				<input type = "text" name = "email1"> @
+				<select name = "email2">
+					<option value = "">선택</option>
+					<option value = "daum.net">daum.net</option>
+					<option value = "naver.com">naver.com</option>
+					<option value = "gmail.com">gmail.com</option>
+				</select>
+			</p>
+			<p>
+				<label>전화번호</label>
+				<select name = "phone1">
+					<option value = ""> 선택 </option> 
+					<option value = "010"> 010 </option> 
+					<option value = "011"> 011 </option>
+					<option value = "017"> 017 </option>
+				</select> - 
+				<input type = "text" name = "phone2" size = "4" maxlength = "4"> -
+				<input type = "text" name = "phone3" size = "4" maxlength = "4">
+				</p>
+			<p>
+				<label>국가</label>
+				<select name = "country">
+					<option value = "">선택</option>
+					<option value = "영국">영국</option>
+					<option value = "프랑스">프랑스</option>
+					<option value = "이탈리아">이탈리아</option>
+				</select>
+			</p>
+			<p>
+				<label>예약날짜</label>
+				<input type = "date" name = "date">
+			</p>
+			<p>
+				<label>예약인원</label>
+				<input type = "number" name = "number">
+			</p>
+			
+			<p>
+				<label>옵션</label>
+					<input type = "checkbox" name = "airport" value = "픽업"> 픽업
+					<input type = "checkbox" name = "airport" value = "샌딩"> 샌딩
+					<input type = "checkbox" name = "airport" value = "선택안함"> 선택안함
+			</p>	
+			
+			<p>
+				<input type = "submit" value = "확인" onClick = "return check()">
+				<input type = "reset" value = "리셋">
+			</p>
+		</form>		
+</body>
+</html>

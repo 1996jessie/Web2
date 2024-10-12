@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>우편번호 패턴</title>
+<script type="text/javascript">
+	function check() {
+		//alert("check");
+		var msg = document.forms[0].code.value;
+		//alert("msg:" + msg);
+		
+		//정규표현식 : 패턴만들기 regexper.com
+		//var regex = /\d{3}/; //정수 세자리만 가능한 패턴 //숫자가 3자리 이상이면 올바른 형식 출력(5자리나 문자가 섞여도 됨)
+		//var regex = /^\d{3}-?\d{3}$/; //우편번호 패턴  
+		//var regex = /^\d{4}[./ -][01]?\d[./ -][0-3]?\d$/; //생년월일 패턴
+		var regex = /^\d{4}[./ -](0?[1-9]|1[012])[./ -](0?[1-9]|[12]\d|3[01])$/; //생년월일 패턴(월에 12까지, 일에 31까지만 가능하게 >> | : 또는)
+		//var regex = /^[a-zA-Z0-9]{4,8}@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+		/* 
+		^ : 숫자로 시작
+		$ : 숫자로 끝남
+		\d : 0~9 사이의 정수
+		\D : 0~9 사이의 정수 외의 값
+		\w : 문자, 숫자, 밑줄기호(_)
+		\W : /w의 반대
+		[] : [] 안의 어떤 값도 가능
+		[0-3] : 0~3까지의 숫자 입력 가능
+		[] 안에 - 쓸 때는 ~부터 ~까지 의미 가지지 않도록 맨 뒤에 써야함 ex)[./+ -]
+		. : 모든 문자
+		\. : .만 가능([] 내부에는 그냥 써도 됨)
+		
+		+ : + 앞의 요소가 1개 이상 있도록(최소 1번~무한대)
+		* : 0~무한개
+		? : ? 앞의 요소가 0개 or 1개 있도록
+				
+		*/
+		if(msg.search(regex) == -1) { //패턴에 맞지 않으면 -1
+			alert("잘못된 형식");
+		} else { 
+			alert("올바른 형식");
+		}
+	}
+</script>
+</head>
+<body>
+	<form action = "">
+		<input type = "text" name = "code"><br>
+		<input type = "button" value = "클릭" onClick = "check()">
+	
+	</form>
+</body>
+</html>

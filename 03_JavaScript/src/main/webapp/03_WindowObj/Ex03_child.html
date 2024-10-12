@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03_child</title>
+<style type="text/css">
+	img{
+		width : 200px;
+		height : 100px;
+	}
+</style>
+<script type="text/javascript">
+	function receiver(){
+		//alert('receiver');
+		
+		window.document.myform.child_id.value = window.opener.document.myform.id.value;
+		//document.myform.child_password.value = window.opener.document.myform.password.value;
+		myform.child_password.value = opener.myform.password.value;
+		//document, window 생략 가능
+		
+	}
+	function meClose(){
+		window.opener.document.myform.id.value = myform.child_id.value;
+		opener.myform.password.value = myform.child_password.value;
+		self.close();
+		opener.close();  
+	} 
+</script>
+</head>
+<body onLoad="receiver()">
+	<img src="../images/pop1.jpg"><br>
+	
+	<form name="myform">
+		<input type="text" name="child_id"> <br>
+		<input type="text" name="child_password"> <br>
+		<input type="button" value="닫기" onClick="meClose()">
+	</form>
+</body>
+</html>

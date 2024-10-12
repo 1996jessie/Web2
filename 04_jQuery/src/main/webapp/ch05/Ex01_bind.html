@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul{
+		float : left;
+		margin : 30px;
+	}
+	div{
+		width : 100px;
+		height : 100px;
+	}
+	img {
+			width : 200px;
+			height : 200px;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		/* $('a').click(function(){
+			
+		}); 
+		$('a').mouseover(function(){
+			
+		}); 
+		*/
+		
+		$('a').bind('click mouseover',function(){
+			
+			//alert($('img').attr('src'));
+			
+			//var href = $(this).attr('href');
+			//$('img').attr('src',href);
+			
+			$('img').attr('src',$(this).attr('href'));
+			return false; // 이벤트 전파 방지
+		});
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li><a href="../images/image3.jpg">사진1</a></li>
+		<li><a href="../images/image4.jpg">사진2</a></li>
+	</ul>
+	<img src="../images/im7.jpg">
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

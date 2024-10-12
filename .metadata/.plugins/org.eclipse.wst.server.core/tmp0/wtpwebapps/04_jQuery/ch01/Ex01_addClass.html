@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01.html</title>
+<style type="text/css">
+	.spotlight{
+		background-color: yellow;
+	}
+	.redtext{
+		color:#f00;
+	}
+	.largetext{
+		font-size: 30px;
+	}
+	.italictext{
+		font-style: italic;
+	}
+	.under{
+		text-decoration: underline;
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){ //document 영역에서 하고 싶은 일
+		//$(작업대상) : 겍체로 만드는 과정
+		//alert(1);
+		//document 제외하고 나머지는 다 따옴표로 둘러싸야 함
+		$('span').addClass('redtext').addClass('under'); //모든 span에 redtext, under 스타일 적용
+		//$('span').addClass('under');
+		$('div').addClass('spotlight');
+		$('#simple1').addClass('largetext');
+		$('.simple1').addClass('italictext');
+	});
+</script>
+</head>
+<body>
+	<span id = "simple1">simple</span>
+	<div class = "simple1">jQuery</div>
+	<span id = "simple2">basic</span>
+	<div class = "simple3">example</div>
+	
+	<hr>
+	
+	<div>
+		<em>Hello!</em>
+		<em>jQuery!</em>
+	</div>
+	<span>
+		<em>Good bye~</em>
+		<em>Javascript</em>		
+	</span>
+
+</body>
+</html>
+<!-- 
+dom : Document Object Model
+document 영역을 구성하고 있는 여러 요소들을 객체로 만들어서 함수를 적용하는 방식
+요소 접근, 추가, 변경, 삭제, css 이용한 엘리먼트 표현, 이벤트 등 가능
+
+ -->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	var yourName = prompt("이름을 입력하세요"); //함수 = 메서드/ 뒤에 초기값 적을 수 있음
+	// prompt 통해 입력	받을 수 있음
+	// 확인 누르면 입력한 값, 취소 누르면 null
+	document.write('yourName : '+yourName+"<br>") //입력한 값이 들어옴
+	if(yourName == "") {
+		document.write("이름 누락");
+	} else if(yourName == null) {
+		document.write("취소 클릭")
+	} else {
+		document.write("나의 이름은 <span>"+yourName+"</span>입니다.")
+	}
+</script>
+<style type = "text/css">
+	span{
+		color: blue;
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

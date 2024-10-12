@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+		#left_side{
+			float: left; 
+			margin-right: 50px ;
+		}
+		div{
+			margin-bottom: 20px;
+		} 
+		#imgsrc{
+			width: 300px ;
+			height: 300px ;
+			left:150px;
+			position:fixed;
+		}
+		img.small{
+			width:90px;
+			height:90px;
+		}
+		#area img{
+			display: none;
+		}
+	</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		//$('#imgsrc')
+		//$('#area #imgsrc')
+/* 		firstSrc = $('#first').attr('src');
+		$('#area img').attr('src',firstSrc); */
+		$('#area img').attr('src',$('#first').attr('src')).css('display','block');
+		
+		$('img.small').mouseover(function(){
+			$(this).fadeTo('slow',0.3);
+			$('#area img').css('display','none'); //안보이게 했다가 서서히 나타나게 해야 효과 볼 수 있음
+			$('#area img').attr('src',$(this).attr('src')).fadeIn(2000);
+		});
+		
+		$('img.small').mouseout(function(){
+			$(this).fadeTo('fast',1);
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<div id='left_side'>
+		<div><img class="small" src="./../images/a.jpg" ></div>
+		<div><img  class="small" id="first" src="./../images/b.jpg"></div>
+		<div><img  class="small" src="./../images/c.jpg"></div>
+	</div>	
+	<div id='area'>
+		<img id='imgsrc'>
+	</div>
+</body>
+</html>
+<!-- 
+1. id="first"
+2. 왼쪽 작은 이미지에 마우스 올렸을 때 해당 이미지가 흐려진다. fadeTo('slow',0.3)
+3. 왼쪽 작은 이미지에서 마우스 치웠을 때 해당 이미지가 선명해진다. fadeTo('slow',1)
+4. 왼쪽 작은 이미지에 마우스 올렸을 때 해당 이미지 src정보를 imgsrc에 src에 넣기, 서서히 나타나게 
+ -->
+
+

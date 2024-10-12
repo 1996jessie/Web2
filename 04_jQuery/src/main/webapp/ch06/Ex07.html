@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	img{
+		height : 100px;
+		float : left; 
+	}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		// http://api.flickr.com/services/feeds/photos_public.gne?tags=flower&tagmode=any&format=json&jsoncallback=?
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=flower&tagmode=any&format=json&jsoncallback=?",
+				function(data){
+					//alert(data);
+					$.each(data.items,function(i,item){
+						//alert(i + "/" + item);
+						//$('#images').append("<img>");
+						$('<img>').attr('src',item.media.m).appendTo("#images");
+						
+						if(i==4){
+							return false;
+						}
+					});
+				});
+	});
+</script>
+</head>
+<body>
+	<div id="images">
+		<!-- <img src="https:\/\/live.staticflickr.com\/65535\/53611994495_3e523afdf2_m.jpg"> -->
+	</div>
+</body>
+</html>

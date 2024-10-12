@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$("p.a") : p 중에서 class = a인 곳 // p(공백).a : p의 자손 중 클래스 = a 인 곳
+		$("p.a").click(function(){
+			$("p.b").toggle(5000); //5초동안
+		});
+		$("p.c").click(function() {
+			$("p.d").toggle('slow'); //toggle('fast','slow',시간,함수 등 쓸 수 있음)
+		});
+	});
+</script>
+</head>
+<body>
+	<p class = "a">남자배우 인기순위</p>
+	<p class = "b">이승기</p>
+	<p class = "b">김수현</p>
+	<p class = "b">차은우</p>
+	<p class = "b">손석구</p>
+	<p class = "b">하정우</p>
+	<hr>
+	
+	<div class = "a"></div>
+	<p class = "c">여자배우 인기순위</p>
+	<p class = "d">전지현</p>
+	<p class = "d">공효진</p>
+	<p class = "d">김태희</p>
+	<p class = "d">신혜선</p>
+	<p class = "d">라미란</p>
+	
+</body>
+</html>

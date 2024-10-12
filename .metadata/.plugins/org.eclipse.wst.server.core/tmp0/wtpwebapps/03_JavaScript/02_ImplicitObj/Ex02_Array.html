@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var a = Array('kim','lee','son');
+	var b = Array('park','won','shin','choi');
+	
+	var c = a.concat(b); //concat : a에 b를 연결해라
+	document.write("c:"+c+"<br>");
+	//c:kim,lee,son,park,won,shin,choi
+	
+	var crev = c.reverse(); //reverse : 배열 순서 뒤집어라 //굳이 crev에 담지 않아도 이미 c는 뒤집힌 상태
+	for(i=0;i<crev.length;i++) {
+		document.write(crev[i]+" ");
+	}
+	document.write("<br>");
+	//choi shin won park son lee kim
+	
+	var csliice = c.slice(1,3); //slice : 일부(1번방에서 3번방 앞까지)만 가져와라 //cslice라는 배열에 가져온 일부가 들어감
+	for(i=0;i<csliice.length;i++) {
+		document.write(csliice[i]+" ");
+	}
+	document.write("<br>");
+	//shin won
+	
+	var csort = c.sort(); //sort : 정렬해라
+	for(i=0;i<csort.length;i++) {
+/* 		document.write(csort[i]+" "); */
+  		document.write(c[i] + " "); //이미 c는 정렬된 상태로 바뀜 
+	}
+	document.write("<br>");
+	//choi kim lee park shin son won
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		border : 1px solid gray;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		// h3클릭했을 때 h4에 현재시간 출력 
+		var now = new Date();
+		$('h3').click(function(){
+			/* alert(typeof(now));
+			alert(typeof("<span>" + now + "</span>")); */
+			
+			$('h4').append("<span>" + now.toLocaleString() + "</span>");
+			
+			$.getJSON('item.json',function(data, status){
+				/* alert(data); // [object]
+				alert(status); */
+				
+				$('#jsonTable').append("<tr><td>id</td><td>name</td><td>price</td><td>description</td></tr>");
+				
+				$.each(data,function(){
+					$('#jsonTable').append("<tr>" 
+											+ "<td>" + this.id + "</td>"
+											+ "<td>" + this.name+ "</td>"
+											+ "<td>" + this.price+ "</td>"
+											+ "<td>" + this.description+ "</td>"
+											+"</tr>"
+										);
+				});
+			});
+		});//click
+	});
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사 자료</h3>
+	<h4></h4>
+	
+	<table id="jsonTable">
+		
+	</table>
+	
+</body>
+</html>
+<!-- 
+json표기법
+[
+{
+속성1:값1,
+속성2:값2
+},
+{
+속성1:값1,
+속성2:값2
+},
+{
+속성1:값1,
+속성2:값2
+}
+]
+ -->
+
+
+
+
+
+
+
+
+
+

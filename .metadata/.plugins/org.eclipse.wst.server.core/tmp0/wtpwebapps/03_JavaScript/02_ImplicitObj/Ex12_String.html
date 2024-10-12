@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function onlyNumber() {
+		//alert('onlyNumber');
+		
+		var e = event.srcElement; //어디서 이벤트 발생했는지
+		//alert(e.name + "/" + e.value); //이벤트 발생한 곳의 이름과 값
+		
+		var num = "0123456789";
+		pos = e.value.length-1; //e.value : 입력한 값 / pos = 입력한 값의 길이-1
+		if(num.indexOf(e.value.charAt(pos)) == -1){ //입력한 값의 위치 가져와서 그 값이 num의 몇번째에 있는지 확인>> 없으면 -1 >> 글자라는 뜻
+			//alert("숫자 아님");
+			e.value = e.value.replace(e.value.charAt(pos),""); //문자 넣으면 그 값 지워짐
+		} /* else { //가져온 값이 num의 어딘가에 있음 = e.value가 숫자라는 뜻
+			alert("숫자 입력함");
+		} */
+	} //숫자는 그대로 입력되고 숫자가 아닌 값이 입력되면 지워지도록 설정
+</script>
+</head>
+<body>
+	<form>
+		전화번호 입력 :
+		<input type = "text" onKeyUp="onlyNumber()" name = "tel1" size = "3" maxlength = "3"> - 
+		<!-- size : 한글 한번에 3글자 보일 정도로 너비 설정(더 넣을 수 있음) / maxlength : 최대 글자수 정의(더 넣을 수 없음)-->
+		<!-- onKeyUp : 키보드 눌렀다가 올라올 때 onlyNumber() 함수 호출 -->
+		<input type = "text" onKeyUp="onlyNumber()" name = "tel2" size = "4" maxlength = "4"> -
+		<input type = "text" onKeyUp="onlyNumber()" name = "tel3" size = "4" maxlength = "4">
+	</form>
+</body>
+</html>

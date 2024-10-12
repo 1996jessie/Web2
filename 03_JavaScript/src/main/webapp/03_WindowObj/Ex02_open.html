@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showPopup(url) { //넘어오는 파일명 받을 수 있도록 준비
+		window.open(url,'popup2','width=300 height=400');
+	}
+	function showCenter(url) { //팝업 중앙에 띄우기
+		var winW = 600;
+		var winH = 300;
+		document.write(screen.width+"/"+screen.height+"<br>"); //화면의 해상도 출력
+		
+		var winLeft = (screen.width- winW) / 2; 
+		var winTop = (screen.height- winH) / 2;
+		
+		var options = "width=" + winW + ",height=" + winH + ",left =" + winLeft + ",top=" + winTop;
+		//(winLeft, winTop) : 팝업의 시작 좌표
+		window.open(url,'popup3',options);
+	}
+	function openWindow() {
+		mywin = window.open('Ex02_popup1.html','popup1','') //mywin : 전역변수 / var mywin = ~~ 하면 지역변수라 closeWindow()에서 닫히지 않음
+		
+	}
+	function closeWindow() {
+		mywin.close();
+		
+	}
+</script>
+</head>
+<body>
+	<input type = "button" value = "이벤트1" onClick = "window.open('Ex02_popup1.html','popup1','')"><br><br>
+	<input type = "button" value = "이벤트2" onClick = "showPopup('Ex02_popup2.html')"><br><br>
+	<input type = "button" value = "이벤트3" onClick = "showCenter('Ex02_popup3.html')"><br><br>
+	<input type = "button" value = "창열기" onClick = "openWindow()"><br><br>
+	<input type = "button" value = "창닫기" onClick = "closeWindow()"><br><br>
+</body>
+</html>

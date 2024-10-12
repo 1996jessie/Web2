@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex04_end이예원</title>
+<script type="text/javascript">
+	function init() {
+	var a = new Array('더하기','빼기','곱하기','나누기');
+		for (i=0;i<a.length;i++) {
+			myform.choice.options[i] = new Option(a[i]); 
+		}
+	}
+	
+	function meClose() {
+
+		if(isNaN(document.myform.num1.value) || isNaN(document.myform.num2.value)) {
+			alert('숫자가 아닙니다.');
+			return;
+		}
+		
+		value1 = +document.myform.num1.value;
+		cindex = document.myform.choice.selectedIndex;
+		value2 = +document.myform.num2.value;
+		
+ 		if(cindex==0) {
+			window.opener.document.myform.result.value = value1+value2;
+		} else if(cindex==1) {
+			window.opener.document.myform.result.value = value1-value2;
+		}else if(cindex==2) {
+			window.opener.document.myform.result.value = value1*value2;
+		}else if(cindex==3) {
+			window.opener.document.myform.result.value = value1/value2;
+		}  
+ 		self.close();
+	}
+</script>
+</head>
+<body onLoad = "init()">
+	<form name = "myform">
+		<input type = "text" name = "num1" style = "width:50px"> 
+		<select id = "choice" style = "width:100px"></select>  
+		<input type = "text" name = "num2" style = "width:50px"><br><br><br>
+		<input type = "button" value = "닫기" onClick = "meClose()">
+	</form>
+</body>
+</html>

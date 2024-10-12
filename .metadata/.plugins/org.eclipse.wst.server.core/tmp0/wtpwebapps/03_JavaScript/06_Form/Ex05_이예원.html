@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 
+누락체크 : 아이디, 비번, 이름, 전화번호, 주소, 세부주소, email, 가수, 성별, 글쓰기 
+비번 = 비번확인
+전화번호는 숫자로만 입력
+문제없이 입력되면 모든 항목 alert에 띄우고 jsp로 이동
+ -->
+<script type="text/javascript">
+	var str = "입력한 항목은\n "
+	function check() {
+		//alert('check');
+		if(myform.id.value == "") {
+			alert("id 누락");
+			myform.id.focus();
+			return false;
+		} 
+		if(myform.pw.value == "") {
+			alert("pw 누락");
+			myform.pw.focus();
+			return false;
+		}
+		if(myform.repw.value == "") {
+			alert("repw 누락");
+			myform.repw.focus();
+			return false;
+		}
+		if(myform.pw.value != myform.repw.value) {
+			alert("불일치");
+			myform.repw.select(); //블럭 잡기
+			return false;
+		}
+		if(myform.name.value == "") {
+			alert("name 누락");
+			myform.name.focus();
+			return false;
+		}
+		index = myform.areacode.selectedIndex;
+		
+		if(myform.phone1.value == "") {
+			alert("phone1 누락");
+			myform.phone1.focus();
+			return false;
+		}
+		if(isNaN(myform.phone1.value)) {
+			alert("phone1에 숫자만 입력해야 함")
+			myform.phone1.select();
+			return false;
+		} 
+/* 		if(Number(myform.phone1.value)<0) {
+			alert("phone1에 양수만 입력해야 함");
+			myform.phone1.select();
+			return false;
+		} */
+		var regex = /^\d{3,4}$/;
+		if(myform.phone1.value.search(regex) == -1) {
+			alert("phone1에 3,4자리의 양수만 입력해야 함");
+			myform.phone1.select();
+			return false;
+		}
+		if(myform.phone2.value == "") {
+			alert("phone2 누락");
+			myform.phone2.focus();
+			return false;
+		}
+		if(isNaN(myform.phone2.value)) {
+			alert("phone2에 숫자만 입력해야 함")
+			myform.phone2.select();
+			return false;
+		}
+		if(myform.phone2.value.search(regex) == -1) {
+			alert("phone2에 3,4자리의 양수만 입력해야 함");
+			myform.phone2.select();
+			return false;
+		}
+		if(myform.address1.value.length == 0) {
+			alert("address 누락");
+			myform.address1.focus();
+			return false;
+		}
+		if(myform.address2.value.length == 0) {
+			alert("address2 누락");
+			myform.address2.focus();
+			return false;
+		}
+
+		if(myform.email.value == "") {
+			alert("email 누락");
+			myform.email.focus();
+			return false;
+		}
+		if(myform.email.value.indexOf('@') == -1) { //@ 없으면 -1
+			alert('@ 누락');
+			return false;
+		}
+
+		str += "id: " + myform.id.value + "\n";
+		str += "pw: " + myform.pw.value + "\n";
+		str += "repw: " + myform.repw.value + "\n";
+		str += "name: " + myform.name.value +"\n";
+		str += "phone: " + myform.areacode[index].value + "-" + myform.phone1.value + "-" + myform.phone2.value + "\n";
+		str += "address: " + myform.address1.value + " " + myform.address2.value + "\n";
+		str += "email: " + myform.email.value + "\n";
+		
+		var slen = myform.singer.length;
+		var sflag = false;
+		for(i=0;i<slen;i++) {
+			if(myform.singer[i].checked) {
+				sflag = true;
+				str += "singer: " + myform.singer[i].value + " ";
+			}
+		}
+		if(sflag == false) {
+			alert("singer 누락");
+			return false;
+		}
+		var glen = myform.gender.length;
+		var gflag = false;
+		for(i=0;i<glen;i++) {
+			if(myform.gender[i].checked) {
+				gflag = true;
+				str += "\n"+"gender: " + myform.gender[i].value + "\n";
+				break;
+			}
+		}
+		if(gflag == false) {
+			alert("gender 누락");
+			return false;
+		}
+		
+		if(myform.ta.value == "") {
+			alert("ta 누락");
+			return false;
+		}
+		str += "ta: " + myform.ta.value;
+		
+		alert(str);
+	}
+
+</script>
+</head>
+<body>
+	<form action = "result.jsp" name = "myform">
+		<table border = "1" cellspacing = "0">
+				<tr>
+					<th>아이디</th>
+					<td><input type = "text" name = "id" placeholder = "아이디 입력"></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type = "password" name = "pw"></td>
+				</tr>
+				<tr>
+					<th>비밀번호 확인</th>
+					<td><input type = "password" name = "repw"></td>
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td><input type = "text" name = "name"></td>
+				</tr>
+				<tr>
+					<th>전화 번호</th>
+					<td>
+						<select name = "areacode">
+							<option value = "02" selected> 02 </option> 
+							<option value = "031"> 031 </option>
+							<option value = "051"> 051 </option>
+							<option value = "064"> 064 </option>
+						</select> - 
+					<input type = "text" name = "phone1" size = "4" maxlength = "4"> -
+					<input type = "text" name = "phone2" size = "4" maxlength = "4">
+					</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td><input type = "text" name = "address1"></td>
+				</tr>
+				<tr>
+					<th>세부 주소</th>
+					<td><input type = "text" name = "address2"></td>
+				</tr>
+				<tr>
+					<th>email</th>
+					<td><input type = "text" name = "email"></td>
+				</tr>
+				<tr>
+					<th>좋아하는 가수</th>
+					<td>
+						<input type = "checkbox" name = "singer" value = "소녀시대"> 소녀시대
+						<input type = "checkbox" name = "singer" value = "방탄"> 방탄
+						<input type = "checkbox" name = "singer" value = "레드벨벳"> 레드벨벳
+						<input type = "checkbox" name = "singer" value = "동방신기"> 동방신기
+					</td>
+				</tr>
+				<tr>
+					<th>성별</th>
+					<td>
+						<input type = "radio" name = "gender" value = "남"> 남
+						<input type = "radio" name = "gender" value = "여"> 여
+					</td>
+				</tr>
+				<tr>
+					<th>글쓰기</th>
+					<td>
+						<textarea name = "ta" rows = "5" cols = "30"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan = "2" align = "center">
+						<input type = "submit" value = "전송합시다" onClick=" return check()">
+						<input type = "reset" value = "초기화">
+					</td>
+				</tr>
+		</table>
+	</form>
+</body>
+</html>

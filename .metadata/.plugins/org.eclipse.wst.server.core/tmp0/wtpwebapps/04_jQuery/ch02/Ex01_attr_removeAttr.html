@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+/* 		$('img:first').attr("src","../images/im0.jpg"); //첫번째 이미지에 속성으로 이미지 넣기
+		$('img:first').attr("title","우리집 똘이"); //첫번째 이미지에 title 설정
+		$('img:first').attr("width","100px");
+		$('img:first').attr("height","100px");
+		$('img:first').css("border","3px dashed green"); */
+		$('img:eq(0)').attr("src","../images/im0.jpg").attr("title","우리집 똘이").attr("width","100px").attr("height","100px").css("border","3px dashed green");
+		//메서드 체이닝
+		$('img:eq(1)').attr({
+								src: "../images/im1.jpg",
+								title : "우리집 강아지",
+								alt : "대신하는 문자열",
+								width : "150px",
+								height : "150px"
+							})
+							.css({
+								border : "1px solid red",
+								padding: "20px",
+								background : "yellow"
+							});
+		$('#btn').click(function(){
+			//alert('버튼 클릭');
+			$('img:eq(0)').removeAttr("title");
+			$('img:eq(0)').css("border","5px dotted red");
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<img/><img/>
+	<div>
+		<b>속성 : 어트리뷰트(attribute) 연습</b>
+		<span></span>
+	</div>
+	<br><br>
+	<button id="btn">어트리뷰트 값 제거하기</button>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+function popup() {
+	window.open('Reservation.html','reservation','width=300, height=600');
+}
+$(function(){ 
+    $('button').click(function(){
+        $('span').show();
+    });
+});
+</script>
+<style type="text/css">
+span{
+	display: none;
+}
+nav {
+	background-color: cyan;
+	height: 8%;
+	width: 75%;
+	font-size: 1.5em;
+}
+
+nav li {
+	display: inline-block; /* 요소들을 인라인 블록으로 표시 */
+	margin: 0 2%; /* 좌우 여백을 화면 너비의 2%로 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	font-size: 100%;
+}
+aside {
+	width: 20%;
+	border: 1px solid #666;
+	background-color: #ffd8d8;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+nav a {
+	text-decoration: none; 
+	line-height: 40px;
+}
+
+nav a:hover {
+	color: yellow; 
+}
+nav li:last-child {
+	color: red;
+}
+
+div img {
+	height: 30%;
+	width: 25%;
+}
+
+</style>
+<title>영국</title>
+</head>
+<body>
+	<nav>
+		<ul id="topMenu">
+			<li><a href=Main.html>Home</a></li>
+			<li><a href=UK.html>영국</a></li>
+			<li><a href=France.html>프랑스</a></li>
+			<li><a href=Italy.html>이탈리아</a></li>
+			<li><a href=CustomerServiceCenter.html>고객센터</a></li>
+			<li onClick="popup()">예약하기</li>
+		</ul>
+	</nav>
+	<aside>
+		<img src="../image/Asia.jpg" width=100% title="아시아"> <img
+			src="../image/North.jpg" width=100% title="미주"> <img
+			src="../image/Latin.jpg" width=100% title="라틴아메리카"> <img
+			src="../image/Africa.jpg" width=100% title="아프리카"> <img
+			src="../image/Austrailia.jpg" width=100% title="호주">
+	</aside>
+
+	<div>
+		<h2 id="london">영국</h2>
+			<ul>
+				<li>영국의 수도이자 영연방의 중심</li>
+				<li>세계 3대 도시이자 다채로운 문화의 도시</li>
+				<ul>
+					<li><a href="https://www.tottenhamhotspur.com/"
+						target="_blank">축구 예약 바로가기</a></li>
+					<li><a href="https://www.londonboxoffice.co.uk/"
+						target="_blank">뮤지컬 예약 바로가기</a></li>
+					<li><a href="https://www.wbstudiotour.co.uk/" target="_blank">해리포터
+							스튜디오 예약 바로가기</a></li>
+				</ul>
+			</ul> 
+			<img src="../image/Palace.jpg" title="버킹엄궁전 근위병 교대식"> 
+			<img src="../image/BigBen.jpg" title="빅벤"> 
+			<img src="../image/Tottenham.jpg" title="토트넘핫스퍼스타디움">
+		
+
+
+	</div>
+
+
+	<br><br>
+
+	<div>
+		<h2 id="edinburgh">에든버러</h2>
+			<ul>
+				<li>스코틀랜드의 수도이자 '북부의 아테네'</li>
+				<li>해리포터의 탄생지</li>
+				<li>프린지 페스티벌과 위스키로 유명</li>
+				<ul>
+					<li>프린지페스티벌이란?
+					<button>Click!</button>
+					<span><br>매년 여름 개최되는 세계 최대 규모의 예술 축제<br>
+					개방성과 다양성을 기반으로 장르에 국한되지 않고 자유롭게 참여할 수 있음</span></li> 
+					<li><a href="https://www.eif.co.uk/" target="_blank">프린지
+							페스티벌 바로가기</a></li>
+				</ul>
+			</ul> 
+			<img src="../image/CaltonHill.jpg" title="칼튼힐"> 
+			<img src="../image/RoyalMile.jpg" title="로얄마일"> 
+			<img src="../image/Castle.jpg" title="에든버러성">
+		
+	</div>
+	
+	<a href="#"><img src="../image/화살표.jpg" width = 50px height = 50px></a>
+</body>
+</html>

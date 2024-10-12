@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+function popup() {
+	window.open('Reservation.html','reservation','width=300, height=600');
+}
+</script>
+<style type="text/css">
+nav {
+	background-color: cyan;
+	height: 8%;
+	width: 75%;
+	font-size: 1.5em;
+}
+
+nav li {
+	display: inline-block; /* 요소들을 인라인 블록으로 표시 */
+	margin: 0 2%; /* 좌우 여백을 화면 너비의 2%로 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	font-size: 100%;
+}
+
+aside {
+	width: 20%;
+	border: 1px solid #666;
+	background-color: #ffd8d8;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+nav a {
+	text-decoration: none; 
+	line-height: 40px;
+}
+
+nav a:hover {
+	color: yellow; 
+}
+nav li:last-child {
+	color: red;
+}
+
+div img {
+	height: 30%;
+	width: 25%;
+}
+
+
+</style>
+<title>프랑스</title>
+</head>
+<body>
+	<nav>
+		<ul id="topMenu">
+			<li><a href=Main.html>Home</a></li>
+			<li><a href=UK.html>영국</a></li>
+			<li><a href=France.html>프랑스</a></li>
+			<li><a href=Italy.html>이탈리아</a></li>
+			<li><a href=CustomerServiceCenter.html>고객센터</a></li>
+			<li onClick="popup()">예약하기</li>
+		</ul>
+	</nav>
+	<aside>
+		<img src="../image/Asia.jpg" width=100% title="아시아"> <img
+			src="../image/North.jpg" width=100% title="미주"> <img
+			src="../image/Latin.jpg" width=100% title="라틴아메리카"> <img
+			src="../image/Africa.jpg" width=100% title="아프리카"> <img
+			src="../image/Austrailia.jpg" width=100% title="호주">
+	</aside>
+
+	<div>
+		<h2 id="paris">로마</h2>
+			<ul>
+				<li>예술과 패션의 도시</li>
+				<li>박물관 시간 확인하기</li>
+				<ul>
+					<li><a href="https://www.louvre.fr/en"
+						target="_blank">루브르박물관</a></li>
+					<li><a href="https://www.musee-orsay.fr/en"
+						target="_blank">오르세미술관</a></li>
+					<li><a href="https://www.centrepompidou.fr/en/" target="_blank">퐁피두센터</a></li>
+				</ul>
+			</ul> 
+			<img src="../image/EffelTower2.jpg" title="에펠탑"> 
+			<img src="../image/Louvre.jpg" title="루브르박물관"> 
+			<img src="../image/ThriumphalArch.jpg" title="개선문">
+		
+
+
+	</div>
+
+	<br><br>
+	<div>
+		<h2 id="others">기타 소도시</h2>
+			<ul>
+				<li>니스</li>
+				<ul>
+					<li>파리 외 도시 중 가장 잘 알려진 도시</li>
+					<li>따뜻한 날씨와 아름다운 해변을 즐길 수 있는 곳</li>
+					<li>니스카니발, 칸영화제 등 세계적인 축제 즐길 수 있음</li>
+				</ul>
+			</ul>
+			<ul>
+				<li>아비뇽</li>
+				<ul>
+					<li>교황의 도시이자 중세의 모습을 볼 수 있는 도시</li>
+					<li>교통의 요지로, 발랑솔, 액상 프로방스 등으로 이동하기 쉬움</li>
+				</ul>
+			</ul>
+			<ul>
+				<li>스트라스부르</li>
+				<ul>
+					<li>독일과 프랑스 모두의 문화를 만날 수 있는 곳</li>
+					<li>'하울의 움직이는 성'의 배경이 될 만큼 동화 속 분위기</li>
+					<li>콜마르, 디즈니랜드파리 등으로 이동하기 쉬움</li>
+				</ul>
+			</ul> 
+			<img src="../image/Nice.jpg" title="니스"> 
+			<img src="../image/Avignon.jpg" title="아비뇽"> 
+			<img src="../image/Strasbourg.jpg" title="스트라스부르">
+		
+	</div>
+
+	<a href="#"><img src="../image/화살표.jpg" width = 50px height = 50px></a>
+</body>
+</html>

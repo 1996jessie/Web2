@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	var result = confirm("게임 한판 할까요?");
+	//confirm : 확인(true)/취소(false)
+	document.write("result : " + result + "<br>")
+	document.write(typeof(result) + "<br>")
+	if(result == true) {
+		document.write("좋습니다. 한판 합시다.<br>")
+	} else {
+		document.write("다음에 합시다.<br>")
+	}
+	/* 삼항연산자 */
+	(result = confirm("게임 한판 할까요?") ? document.write("좋습니다. 한판 합시다.<br>") : document.write("다음에 합시다.<br>"))
+</script>
+</head>
+<body>
+
+</body>
+</html>

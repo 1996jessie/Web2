@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.redPink {
+		color: Red;
+		background-color: Pink;
+	}
+
+	.blueYellow {
+		color: Blue;
+		background-color: Yellow;
+	}
+	
+	.under{
+		text-decoration: underline;
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('#myToggle li').toggle(); //toggle : 버튼 누르면 사라지고 버튼 또 누르면 다시 생김
+		});//click
+		
+		$('#myToggle li').toggle(first,second,third); 
+	});//ready
+	
+	function first() {
+		$(this).addClass("redPink");
+	}
+	function second() {
+		$(this).removeClass("redPink");
+	}
+	function third() {
+		$(this).addClass("under");
+	}
+</script>
+</head>
+<body>
+	<h1>toggle 함수 사용하기 실습</h1>
+	<ul id="myToggle">
+		<li><h2>EXO</h2></li>
+		<li><h2>방탄소년단</h2></li>
+		<li><h2>워너원</h2></li>
+	</ul>
+	<hr>
+
+	<h1>toggleClass 사용하기 실습</h1>
+	<ul id="yourToggle">
+		<li><h2>소녀시대</h2></li>
+		<li><h2>블랙핑크</h2></li>
+		<li><h2>르세라핌</h2></li>
+	</ul>
+	
+	<button>버튼</button>
+</body>
+</html>

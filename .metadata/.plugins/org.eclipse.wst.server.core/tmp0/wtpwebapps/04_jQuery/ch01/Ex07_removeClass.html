@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	tr{
+		background-color: yellow;
+	}
+	.bluePink{
+		color: blue;
+		background-color: pink;
+	}
+	.orange{
+		background-color: orange; 
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('td').addClass("bluePink"); //덮어쓰기
+		$('td:lt(2)').removeClass("bluePink"); //2보다 작은 칸에서 bluePink 제거
+		//lt(less than) : 0부터
+		$('td:gt(4)').removeClass("bluePink"); //4보다 큰 칸에서 bluePink 제거
+		//gt(greater than) : 0부터
+		/* 
+			0 : lt, gt, eq
+			1 : first, last, nth-child
+		*/
+		$('td:gt(7)').addClass("orange");
+	});
+</script>
+</head>
+<body>
+	<table border=1>
+		<tr>
+			<td>one</td>
+			<td>two</td>
+			<td>three</td>
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>five</td>
+			<td>six</td>
+		</tr>
+	</table>
+	
+	<br>
+	<br>
+	
+	<table border=1>
+		<tr>
+			<td>one</td>
+			<td>two</td>
+			<td>three</td>
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>five</td>
+			<td>six</td>
+		</tr>
+
+	</table>
+</body>
+</html>

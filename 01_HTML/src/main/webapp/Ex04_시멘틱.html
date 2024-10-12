@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 시맨틱 요소를 이용한 마크업 </title>
+		<meta charset="UTF-8" />
+	</head>
+
+<!-- div로 넣어도 되지만 header, nav, footer, acticle 등 시멘틱 요소들로 화면 구성하면 가독성 좋아짐 -->
+	<body>
+		<header> <!-- 본문 중 제목 --> 
+			<hgroup>
+				<h1>프랑스 와인</h1>
+				<h2>프랑스 지역별 와인의 특징 이야기</h2>
+			</hgroup>
+		</header>
+		<nav> <!-- 주 메뉴 부분 표시. 보통 ul태그 많이 사용 -->
+			<ul>
+				<li>home</li>
+				<li>Previous Page </li>
+				<li>Next Page </li>
+			</ul>
+		</nav>
+		<section> <!-- 본문내용 작성 -->
+			<article> <!-- 글 하나하나를 article태그로 둘러싸서 문단 나눔 -->
+				<h3>보르도(Bordeaux) 지역의 <mark>와인</mark> 이야기</h3>
+				<p>	<b>프랑스</b>의 대표적인 와인 생산 지역으로 프랑스 남서부 전지역에 위치한다. 년간 6억 병의 포도주를 생산하는 보르도는 세계에서 가장 큰 규모로 좋은 포도주를 생산하는 곳이다. </p>
+			</article>
+			<article>
+				<h3>보졸레(BEAUJOLAIS) 지역의 와인 이야기</h3>
+				<p>	마콩남쪽에 위치한 <strong>보졸레</strong> 지역의 포도원들은 <font size = "5" color = "red" face = "궁서">쏜(Saone)강</font> 왼편의 넓은 계곡을 향한 동남서 지역의 경사진 언덕에 있다. 이 지역은 22,000 헥타르 정도의 생산면적을 가지고 있으며 매년 평균 1,300,000 헥토리터의 와인들을 생산하고 있다. </p>
+			</article>
+		</section>
+		<aside> <!-- 별도로 분리되어 배너를 담을 수 있는 영억 -->
+			<h3>Link site</h3>
+			<ul>
+				<li>Naver</li>
+				<li>Yahoo</li>
+				<li>Google</li>
+			</ul>
+		</aside>
+		<footer> <!-- 맨 밑에 나오면 좋을 부분 -->
+			<p>All Rights Reserved. </p>
+			
+			X<sup>2</sup>  <br>
+			H<sub>2</sub>O  <br>
+			<u>밑줄</u>  <br>
+			<i>기울임</i>  <br>
+			<em>기          울 임</em>  <br>
+			<em>기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;울 임</em>  <br>
+			<!-- &nbsp; : 띄어쓰기 한칸 -->
+			
+		</footer>
+	</body>
+</html>
+
+<!-- 
+bold, strong : 굵게
+mark : 형광펜
+font size : 글자 크기 조절
+ -->
+

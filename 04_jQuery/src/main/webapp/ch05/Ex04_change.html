@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width : 100px;
+		height : 100px;
+		margin-left : 50px; 
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		$('#sel').change(function(){
+			//alert(1);
+			//var opval = $(this).val();
+			var opval = $(this).attr('value');
+			//alert(opval);
+			
+			$('#img').attr('src','../images/' + opval);
+			
+		}).change(); // 이유 : 
+	});
+	
+	/* 옵션에 변화가 생겼을 때
+	내가 선택한 옵션의 value 속성(attribute)의 값을 가져다가
+	img의 src 속성(attribute)에 넣겠다. */
+	
+</script>
+</head>
+<body>
+	<form name="f">
+		<table>
+			<tr>
+				<td>
+					<select id="sel">
+						<option value="strawberry.gif" >딸기</option>
+						<option value="banana.gif">바나나</option>
+						<option value="apple.gif" selected>사과</option>
+					</select>
+				</td>
+				<td>
+					<img id="img">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		//alert('check');
+		if(window.document.myform.id.value == "") {
+			alert('id 누락되었습니다.');
+			return false;
+		} 
+		
+		if(myform.pw.value == "") {
+			alert('pw 누락되었습니다.');
+			return false;
+		}
+		if(myform.pw.value.length == 0) {
+			alert('pw 누락되었습니다.');
+			return false;
+		}
+		/* pw 4~8만 가능하도록 */
+		if(myform.pw.value.length < 4 || myform.pw.value.length > 8) {
+			alert('pw는 4~8자리 사이입니다.');
+			return false;
+		}
+		if(isNaN(myform.pw.value)) { //NaN : Not a Number //isNaN('ab21cd') : 참 / isNaN('1234') : 거짓
+			alert('pw는 숫자만 입력가능합니다.');
+			return false;
+		}
+	}
+
+</script>
+</head>
+<body onLoad = "myform.id.focus()"> <!-- 처음으로 입력할 곳에 커서 생기도록 -->
+	<form name = "myform" action = "result.jsp">
+		<p>
+			<span>아이디 :</span>
+			<input type = "text" name = "id" maxlength = "5" value = "id입력">
+		</p>
+
+		<p>
+			<span>비밀번호 :</span>
+			<input type = "password" name = "pw" maxlength = "10" placeholder = "4자리~8자리만 입력"> <!-- placeholder : 도움말(글자 입력하면 사라짐) -->
+		</p>
+		
+		<p>
+			<input type = "submit" value = "등록" onClick = "return check()">
+			<input type = "reset" value = "취소">
+		</p>
+	</form>
+</body>
+</html>

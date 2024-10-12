@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var man = new Object();
+		man.name = '홍길동';
+		man.age = '32';
+		man.birthday = new Date(1900, 1, 6);
+
+		var jumsu = new Object();
+		jumsu.kor = '90';
+		jumsu.eng = '70';
+		jumsu.math = '50';
+
+		man.jumsu = jumsu;
+
+		console.log(man.name);
+		console.log(man.age);
+		console.log(man.birthday);
+		console.log(jumsu.kor);
+		console.log(jumsu.eng);
+		console.log(jumsu.math);
+		console.log(man.jumsu.kor);
+		console.log(man.jumsu.eng);
+		console.log(man.jumsu.math);
+		console.log('-------------------------');
+		
+		var man2 = {
+			name : '김수현',
+			age : 50,
+			birthday : new Date(2020,3,20),
+			jumsu : {
+				kor : 40,
+				eng : 80,
+				math : 30
+			},
+			study:function(subject){
+				console.log(subject+"를 공부합니다.");
+			}
+		};
+		
+		var woman = {
+				name : '아이유',
+				age : 30,
+				birthday : new Date(2010,7,10),
+				jumsu : {
+					kor : 33,
+					eng : 99,
+					math : 20
+				},
+				study:function(subject){
+					console.log(subject+"를 공부합니다.");
+				}
+			};
+		console.log(man2.name);
+		console.log(man2.birthday);
+		console.log(man2.jumsu.math);
+		man2.study("jQuery");
+		
+		var person = new Array(
+				{
+					name : '김수현',
+					age : 50,
+					birthday : new Date(2020,3,20),
+					jumsu : {
+						kor : 40,
+						eng : 80,
+						math : 30
+					},
+					study:function(subject){
+						console.log(subject+"를 공부합니다.");
+					}
+				},
+				{
+					name : '아이유',
+					age : 30,
+					birthday : new Date(2010,7,10),
+					jumsu : {
+						kor : 33,
+						eng : 99,
+						math : 20
+					},
+					study:function(subject){
+						console.log(subject+"를 공부합니다.");
+					}
+				}
+					);
+		
+		var person2 = new Array(man2,woman);
+		//var person2 = [man2, woman];
+		
+		console.log(person2.length);
+		console.log(person2[0]);
+		console.log(person2[1]);
+		console.log(person2[0].name);
+		console.log(person2[0].jumsu.eng);
+		console.log(person2[1].name);
+		console.log(person2[1].age);
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+man 객체
+name
+age
+birtdate 생년월일
+jumsu ()
+kor, eng, math
+ -->

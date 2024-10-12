@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type= "text/javascript">
+	var age = 30; /* var은 써도 되고 안써도 됨 */
+	document.write("나이1:"+age+"<br>");
+	function test() { // 정의
+		age = 40; /* var 안 붙이면 전역변수, var 붙이면 새로 지역변수 생성 */
+		document.write("나이2:"+age+"<br>");
+	}
+	test(); //호출
+	document.write("나이3:"+age+"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

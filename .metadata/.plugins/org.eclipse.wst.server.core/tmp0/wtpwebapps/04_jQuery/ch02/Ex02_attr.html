@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#left_side div{
+		float: left;
+		margin-right: 10px; 
+	}
+	#left_side2{
+		clear: left;
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#clock1').click(function(){
+			var temp =$('img').eq(0).attr('src');  //0번째 이미지 속성 잠깐 temp에 넣기
+			//attr(속성) : 속성에 있는 값을 가져와라
+			//attr(속성, 값) : 속성에 값을 넣어라
+			for(i=0;i<$('img').length-1;i++) {
+	/* 			var t = $('img').eq(i+1).attr('src');
+				$('img').eq(i).attr('src',t); */
+				$('img').eq(i).attr('src', $('img').eq(i+1).attr('src'));
+			}
+			$('img').eq($('img').length-1).attr('src',temp);
+		});
+		
+		$('#clock2').click(function(){
+		    var temp = $('img').eq($('img').length - 1).attr('src'); 
+		    for (i = $('img').length - 1; i > 0; i--) {
+		        $('img').eq(i).attr('src', $('img').eq(i - 1).attr('src')); 
+		    }
+		    $('img').eq(0).attr('src', temp); 
+		});
+		
+		setInterval(function() { //1초에 한번씩 왼쪽으로 이동
+			var temp =$('img').eq(0).attr('src');
+			for(i=0;i<$('img').length-1;i++) {
+				$('img').eq(i).attr('src', $('img').eq(i+1).attr('src'));
+			}
+			$('img').eq($('img').length-1).attr('src',temp);	
+			
+		},1000);
+	});
+</script>
+</head>
+<body>
+	<div id = "left_side">
+		<div><img src = "../images/b.jpg" width = "90" height = "90"></div> <!-- nth-child(1) -->
+		<div><img src = "../images/c.jpg" width = "90" height = "90"></div> <!-- nth-child(2) -->
+		<div><img src = "../images/d.jpg" width = "90" height = "90"></div> <!-- nth-child(3) -->
+	</div>
+	<div id = "left_side2">
+		<input id = "clock1" type = "button" value = "왼쪽 이동">
+		<input id = "clock2" type = "button" value = "오른쪽 이동">
+	</div>
+</body>
+</html>

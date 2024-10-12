@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		cnt = 0;
+		$('img').bind({
+						mouseout : function(){
+							$('img').attr('src',"../images/but1.gif");
+							cnt++;
+							if(cnt == 5){
+								$('img').unbind();
+							}
+						},
+						"mouseover" : function(){
+							$('img').attr('src',"../images/but2.gif");
+							cnt++;
+							if(cnt == 5){
+								$('img').unbind();
+							}
+						},
+						click : function(){
+							alert('클릭');
+						}
+					});//bind
+	});
+</script>
+</head>
+<body>
+	<img src="../images/but1.gif">
+</body>
+</html>

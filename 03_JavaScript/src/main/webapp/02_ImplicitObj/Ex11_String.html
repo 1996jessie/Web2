@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var subject = "태양처럼 뜨거운, 바람처럼 자유로운 영혼";
+	document.write("subject: "+subject+"<br>");
+	document.write("subject.toString(): "+subject.toString()+"<br>"); //toString() 안써도 결과 같음
+	
+	document.write("subject.length: "+subject.length+"<br>"); //java는 subject.length()
+	ch = subject.charAt(5); //첫글자 : 0
+	document.write("ch:"+ch+"<br>");
+	document.write("subject.indexOf('처럼'): "+subject.indexOf('처럼')+"<br>"); //첫번째 나타나는 '처럼'의 시작 위치
+	document.write("subject.lastIndexOf('처럼'): "+subject.lastIndexOf('처럼')+"<br>"); //마지막으로 나타나는 '처럼'의 시작 위치
+	document.write("subject.indexOf('가나다'): "+subject.indexOf('가나다')+"<br>"); //없으면 -1
+	document.write("subject.slice(3,7): "+subject.slice(3,7)+"<br>"); //3번째부터 7번째의 앞까지만 나옴
+	document.write("subject.slice(10,14): "+subject.slice(10,14)+"<br>"); //10번째부터 14번째의 앞까지만 나옴
+	document.write("subject.slice(10,-4): "+subject.slice(10,-4)+"<br>"); //10번째부터 뒤에서부터 4번째 자리의 앞까지
+	document.write("subject.slice(3): "+subject.slice(3)+"<br>"); //3번째부터 끝까지
+	document.write("subject.substring(10,14): "+subject.substring(10,14)+"<br>"); //slice와 같은 결과
+	document.write("subject.substring(10,-4): "+subject.substring(10,-4)+"<br>"); //제대로된 결과를 가져오지 못함 : substring에는 음수 사용x
+	document.write("subject.substring(10): "+subject.substring(10)+"<br>"); //10부터 끝까지
+	document.write("subject.substr(10,4): "+subject.substr(10,4)+"<br>"); //10번째 위치부터 4개 가져와라
+	document.write("subject.charAt(3) :"+subject.charAt(3)+"<br>"); //3번째 자리에 있는 '럼' 가져오기
+	document.write("subject.replace('럼','가') :"+subject.replace('럼','가')+"<br>"); //'럼' 대신 '가'로 바꾸기
+	document.write("subject.replace(subject.charAt(3),'가') :"+subject.replace(subject.charAt(3),'가')+"<br>"); //3번째 위치의 글자를 '가'로 바꾸기
+	
+	word = "i Can do iT!";
+	document.write("word: "+word+"<br>");
+	document.write("word.toUpperCase(): "+word.toUpperCase()+"<br>"); //대문자
+	document.write("word.toLowerCase(): "+word.toLowerCase()+"<br>"); //소문자
+	
+	document.write("a태그: "+"<a href = 'http://www.naver.com'>네이버</a><br>");
+	document.write("link(): "+"네이버".link("http://www.naver.com")+"<br>"); //a태그와 똑같은 역할
+	
+	str = "웬디 70 80 90";
+	document.write("str: "+ str+"<br>");
+	arr = str.split(" "); //공백으로 나눈 값을 arr라는 배열에 담음
+	for(i=0;i<arr.length;i++) {
+		document.write(arr[i]+"<br>");
+	}
+	
+	sum = 0;
+	for(i=1;i<arr.length;i++) {
+		sum += parseInt(arr[i]); //number, +, eval도 가능
+	}
+	document.write("sum: "+ sum + "<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

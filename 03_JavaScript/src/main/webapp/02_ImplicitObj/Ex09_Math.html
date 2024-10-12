@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("Math.abs(-3): "+Math.abs(-3)+"<br>"); //abs : 절대값
+	document.write("Math.round(12.345): "+Math.round(12.345)+"<br>"); //round : 절대값
+	document.write("Math.round(12.789): "+Math.round(12.789)+"<br>");
+	document.write("Math.floor(12.789): "+Math.floor(12.789)+"<br>"); //floor : 버림
+	document.write("parseInt(12.289): "+parseInt(12.789)+"<br>"); //parseInt : 정수화
+	document.write("Math.ceil(12.289): "+Math.ceil(12.289)+"<br>"); //ceil : 올림
+	document.write("Math.max(10,20,3,12,28,1): "+Math.max(10,20,3,12,28,1)+"<br>"); //max : 큰 값(여러 값 넣을 수 있음)
+	document.write("Math.min(10,20,3,12,28,1): "+Math.min(10,20,3,12,28,1)+"<br>"); //min : 작은 값(여러 값 넣을 수 있음)
+	document.write("Math.random(): "+Math.random()+"<br>"); //0<=x<1인 실수 난수 발생
+	
+	//3~10 사이의 정수 난수
+	a = parseInt((Math.random()*8) + 3);
+	document.write("정수 난수: " + a+"<br>");
+	
+	//1~45 사이의 정수 난수
+	result = parseInt((Math.random()*45) + 1);
+	document.write("정수 난수: " + result + "<br>");
+	
+	count = 0; 
+	do{
+		num = prompt("1~45 사이의 수 입력"); //내가 입력한 수
+		count++;
+		if(result>num) {
+			alert("더 큰 수를 입력하세요")
+		} else if(result<num) {
+			alert("더 작은 수를 입력하세요")
+		} else {
+			alert("맞췄습니다.");
+			break;
+		}
+	}while(true){ 
+		document.write("시도한 횟수:"+count);
+	};
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

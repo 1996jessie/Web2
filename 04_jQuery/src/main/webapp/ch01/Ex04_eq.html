@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		text-align: center;
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+
+	var table = "<table border=1>";
+	var a = 1;
+	for (i=0;i<4;i++) {
+		table += "<tr>";
+		for(j=0;j<7;j++) {
+			table += "<td>" + a + "</td>"; 
+			a++;
+		}
+		table += "</tr>";
+	}
+	table += "</table>";
+	
+	document.write(table);
+
+	$(document).ready(function(){
+		//$('tr:first').css('background','orange');
+		//$('tr:first-child').css('background','orange');
+		$('tr:eq(0)').css('background','orange');
+		
+		//$('td:eq(3)').css('background','blue')
+		$('tr:eq(0) > td:eq(3)').css('background','blue');
+		
+		$('tr:eq(1) td:nth-child(even)').css('background','yellow');
+		$('tr:eq(2) td:nth-child(odd)').css('background','red');
+		$('tr:eq(3) td:nth-child(3n)').css('background','pink');
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

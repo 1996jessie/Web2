@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		float: left;
+		margin: 25px;
+		width : 150px;
+		height:200px;
+	}
+	 div:nth-child(1){
+     	background-color: yellow;
+   	}
+   	 div:nth-child(2){
+     	background-color: pink;
+   	}
+   	 div:nth-child(3){
+     	background-color: yellowgreen;
+   	}
+   	 div:last-child{
+     	background-color: cyan;
+   	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//alert(1);
+		var fruits = ["apple","banana","orange","melon"];
+		var cars = new Array("sonata","genesis","morning");
+		
+		//$(fruits).each(function(index,value){
+		$.each(fruits, function(index,value){
+			$('#fruit_list').append("<li>" + index +":" + value +"</li>");
+		});
+		
+		$.each(cars, function(index,value) {
+			//$('#car_list').append("<li>" + index + ":" + value + "</li>");
+			$("<li>" + index + ":" + value + "</li>").appendTo('#car_list'); 
+		});
+		
+		
+		$.each(fruits, function(index,value){
+			$('#fruit_list2').prepend("<li>" + index +":" + value +"</li>");
+		});
+		
+		$.each(cars, function(index,value){
+			//$('#car_list2').prepend("<li>" + index +":" + value +"</li>");
+			$("<li>" + index +":" + value +"</li>").prependTo('#car_list2');
+		});
+		
+	});//ready
+	
+	/* target.append(새로운 엘리먼트)
+	새로운 엘리먼트.appendTo(target) */
+	
+</script>
+</head>
+<body>
+	<div>
+		<b>내가 좋아하는 과일</b>
+		<ul id="fruit_list">
+			<!-- 자식<li> -->
+			<!-- 자식<li> -->
+		</ul>
+	</div>
+	<div>
+		<b>내가 갖고 싶은 차</b>
+		<ul id="car_list"></ul>
+	</div>
+	<div>
+		<b>내가 좋아하는 과일2</b>
+		<ul id="fruit_list2">
+		<!-- 	melon
+			orange
+			banana
+			apple -->
+		</ul>
+	</div>
+	<div>
+		<b>내가 갖고 싶은 차2</b>
+		<ul id="car_list2"></ul>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

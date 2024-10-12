@@ -1,0 +1,170 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<!-- 
+	전송을 클릭했을 때  
+	시작하자마자 제목에 focus
+   	제목, 저자, 출판사, 가격, 입고일, 배송비, 구입가능 서점 누락 체크
+   	가격 숫자 입력했는지 체크
+   	보유수량 선택 이외의 것 체크  
+   	작성한(선택한) 모든 것 alert에 띄우고 jsp로 이동(서점 선택한 모든 것 alert에 띄우기)
+    -->
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check(){
+		var str = "<도서 정보>" + "\n";
+		
+		//제목 누락 확인
+ 		if(myform.title.value == ""){
+			alert("제목을 입력하세요.");
+			myform.title.focus();
+			return false;
+		}
+ 		
+ 		//저자 누락 확인
+		if(myform.author.value == ""){
+			alert("저자를 입력하세요.");
+			myform.author.focus();
+			return false;
+		}
+		
+		//출판사 누락 확인
+		if(myform.publisher.value == ""){
+			alert("출판사를 입력하세요.");
+			myform.publisher.focus();
+			return false;
+		}
+		
+		//가격 누락 확인
+		if(myform.price.value == ""){
+			alert("가격을 입력하세요.");
+			myform.price.focus();
+			return false;
+		}
+		//가격 형식 확인
+		if(isNaN(myform.price.value)){
+			alert("가격은 숫자로만 입력하세요.");
+			myform.price.select();
+			return false;
+		}
+		
+		//입고일 누락 확인
+		if(myform.date.value == "") {
+			alert("입고일을 입력하세요.");
+			return false;
+		} 
+
+		//일단 여기까지 출력
+		str += "제목 : " + myform.title.value + "\n";
+		str += "저자 : " + myform.author.value + "\n";
+		str += "출판사 : " + myform.publisher.value + "\n";
+		str += "가격 : " + myform.price.value + "\n";
+		str += "입고일 : " + myform.date.value + "\n";
+		
+		//배송비 누락 확인
+		var klen = myform.kind.length;
+		var kflag = false;
+		for(i=0;i<klen;i++){
+			if(myform.kind[i].checked) {
+				kflag = true;
+				//배송비 출력
+				str += "배송비 : " + myform.kind[i].value + "\n";
+				break;
+			}
+		}
+		if(kflag == false) {
+			alert("배송비를 선택하세요.");
+			return false;
+		}
+		
+		//구입가능 서점 누락 확인
+		var blen = myform.bookstore.length;
+		var bflag = false;
+		
+		str += "구입 가능 서점 : ";
+		var blen = myform.bookstore.length;
+		var bflag = false;
+		for(i=0;i<blen;i++) {
+			if(myform.bookstore[i].checked) {
+				bflag = true;
+				//구입가능 서점 출력
+				str += myform.bookstore[i].value + " ";
+			}
+		}
+		if(bflag == false) {
+			alert("구입가능 서점을 선택하세요.");
+			return false;
+		}
+		
+		//보유수량 누락 확인
+		if(myform.count.value == "선택") { 
+			//count : name, id 둘 다 가능 >> select name="count1" id="count2"면 myform.count1.value/myform.count2.value 둘 다 가능
+			alert("보유수량을 선택하세요.");
+			return false;
+		}else {
+			str += "\n"+ "보유수량 : " + myform.count.value;
+		}
+		
+		//작성한 모든 값 alert로 띄우기
+		alert(str);
+	}
+
+</script>
+
+</head>        
+<body onLoad = "myform.title.focus()">
+	<h1>도서 정보 입력</h1>
+	<form name="myform" action="result.jsp" method="post">
+		<table border=1>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td>저자</td>
+				<td><input type="text" name="author">
+			</tr>
+			<tr>
+				<td>출판사</td>
+				<td><input type="text" name="publisher">
+			</tr>
+			<tr>
+				<td>가격</td>
+				<td><input type="text" name="price">
+			</tr>
+			<tr>
+				<td>입고일</td>
+				<td><input type="date" name="date">
+			</tr>
+
+			<tr>
+				<td>배송비</td>
+				<td>유료 <input type="radio" name="kind" value="유료"> 
+					무료 <input type="radio" name="kind" value="무료">
+			</tr>
+			<tr>
+				<td>구입가능 서점</td>
+				<td>교보문고 <input type="checkbox" name="bookstore" value="kyobo">
+					알라딘 <input type="checkbox" name="bookstore" value="aladin">
+					yes24 <input type="checkbox" name="bookstore" value="yes24">
+					인터파크 <input type="checkbox" name="bookstore" value="interpark">
+			</tr>
+			<tr>
+				<td>보유수량</td>
+				<td><select name="count" id="count">
+						<option value="선택">선택
+						<option value="1">1
+						<option value="2">2
+						<option value="3">3
+						<option value="4">4
+						<option value="5">5
+				</select></td>
+			</tr>
+
+		</table>
+		<br> <input type="submit" value="전송" onClick = "return check()"> 
+		<input type="reset"	value="취소">
+	</form>
+</body>
+</html>
+

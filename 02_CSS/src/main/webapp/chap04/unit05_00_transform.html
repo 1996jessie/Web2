@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.wrapper{
+		width: 140px;
+		height: 50px;
+		border: 1px dashed #bbb;
+		margin: 60px;
+		
+	}
+	.trans01, .trans02, .trans03, .trans04, .trans05, .trans06{
+		width: 140px;
+		height: 50px;
+		background-color: rgb(200,200,200)
+	}
+	.trans01 {
+		transform: rotate(20deg);/* 회전(반시계는 -) */
+	}
+	.trans02 {
+		transform: rotate(20deg);/* 회전 */
+	}
+	.trans03 {
+		transform: rotate(20deg);/* 회전 */
+		transform-origin: 0% 0%; 
+	}
+	.trans04 {
+		transform: rotate(20deg);/* 회전 */
+		transform-origin: 0% 100%; 
+	}
+	.trans05{
+		transform: skewX(20deg);
+	}
+	.trans06{
+		transform: skewY(20deg);
+	}
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="trans01"></div>
+	</div>
+	<div class="wrapper">
+		<div class="trans02"></div>
+	</div>
+	<div class="wrapper">
+		<div class="trans03"></div>
+	</div>
+	<div class="wrapper">
+		<div class="trans04"></div>
+	</div>
+		<div class="wrapper">
+		<div class="trans05"></div>
+	</div>
+		<div class="wrapper">
+		<div class="trans06"></div>
+	</div>
+	
+
+
+	
+
+</body>
+</html>

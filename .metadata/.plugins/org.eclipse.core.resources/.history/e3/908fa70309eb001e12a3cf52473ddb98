@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		var man = new Object();
+		man.name = "aaa";
+		man.age = 30;
+		man.birthday = new Date(2000,01,01);
+		man.kor = 50;
+		man.eng = 60;
+		man.math = 70;
+		
+		console.log(man.name);
+		console.log(man.age);
+		console.log(man.birthday);
+		console.log(man.kor);
+		console.log(man.eng);
+		console.log(man.math);
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

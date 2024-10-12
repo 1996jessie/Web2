@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+	.style1{
+		color: red;
+		background: pink;
+	}
+	.style2{
+		color: green;
+		background: yellow;
+	}
+	.style3{
+		color: cyan;
+		background: blue;
+	}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//alert(1);
+		//$('tr:first').addClass("style1");//두 테이블에서 가장 첫번째만
+		$('tr:first-child').addClass("style1"); //tr : table의 자식 //두 테이블의 첫번째 모두
+		//$('tr:last').addClass("style2"); //두 테이블에서 가장 마지막만
+		$('tr:last-child').addClass("style2"); //두 테이블의 마지막 모두
+		//$('tr:nth-child(2)').addClass("style3"); //첫줄은 1
+		//$('tr:nth-child(3n+1)').addClass("style3"); //3의 배수 + 1
+		$('tr:nth-child(odd)').addClass("style3"); //홀수 : 1부터 시작
+		
+		$('td:eq(3)').css('backgroundColor','orange'); //3번째 td칸 //eq : 0부터 셈
+	});
+</script>
+</head>
+<body>
+	<table border = 1>
+		<tr>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>						
+		</tr>
+		<tr>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>						
+		</tr>
+		<tr>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>						
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>						
+		</tr>
+		<tr>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>						
+		</tr>
+		<tr>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>						
+		</tr>
+	</table>
+	
+	
+	<br><br>
+	
+	
+	<table border = 1>
+		<tr>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>						
+		</tr>
+		<tr>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>						
+		</tr>
+		<tr>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>						
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>						
+		</tr>
+		<tr>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>						
+		</tr>
+		<tr>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>
+			<td>six</td>						
+		</tr>
+	</table>
+</body>
+</html>

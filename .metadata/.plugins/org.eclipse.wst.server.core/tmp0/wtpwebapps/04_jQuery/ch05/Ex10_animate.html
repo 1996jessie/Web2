@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#images a img{
+	 	width : 200px;
+	 	height : 200px;	 
+	}
+	#images{
+		width : 600px;
+		height : 200px;
+	}
+	#region{ 
+		width : 200px;
+		height : 200px;
+		overflow: hidden;
+		margin : auto; 
+	}
+	#direction{
+		margin : auto;  
+		width : 350px;
+	}
+	.leftbtn{
+		margin-top: 10px;
+	}
+	.rightbtn{
+		margin-left: 290px;
+		margin-top: 10px; 
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		var i = -1;
+		$('.leftbtn').bind('click',function(){
+			if(i == 1){
+				alert('마지막 이미지입니다.');
+				return ;
+			}
+			$('#first').animate({marginLeft:'-=205px'},2000);
+			i++;
+		});
+		
+		$('.rightbtn').bind('click',function(){
+			if(i==-1){
+				alert('처음 이미지입니다.');
+				return;
+			}
+			$('#first').animate({marginLeft:'+=205px'},2000);
+			i--;
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="../images/b.jpg" id="first"></a>
+			<a href="#"><img src="../images/c.jpg" id="second"></a>
+			<a href="#"><img src="../images/d.jpg" id="third"></a>
+		</div>
+	</div>
+	
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

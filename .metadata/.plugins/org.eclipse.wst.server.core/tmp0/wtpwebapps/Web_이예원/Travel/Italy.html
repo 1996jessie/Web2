@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	span{
+		display: none;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+function popup() {
+	window.open('Reservation.html','reservation','width=300, height=600');
+}
+$(function(){ 
+    $('button').click(function(){
+        $('span').show();
+    });
+});
+</script>
+<style type="text/css">
+nav {
+	background-color: cyan;
+	height: 8%;
+	width: 75%;
+	font-size: 1.5em;
+}
+
+nav li {
+	display: inline-block; /* 요소들을 인라인 블록으로 표시 */
+	margin: 0 2%; /* 좌우 여백을 화면 너비의 2%로 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	font-size: 100%;
+}
+
+aside {
+	width: 20%;
+	border: 1px solid #666;
+	background-color: #ffd8d8;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+nav a {
+	text-decoration: none; 
+	line-height: 40px;
+}
+
+nav a:hover {
+	color: yellow; 
+}
+nav li:last-child {
+	color: red;
+}
+div img {
+	height: 30%;
+	width: 25%;
+}
+
+
+</style>
+<title>이탈리아</title>
+</head>
+<body>
+	<nav>
+		<ul id="topMenu">
+			<li><a href=Main.html>Home</a></li>
+			<li><a href=UK.html>영국</a></li>
+			<li><a href=France.html>프랑스</a></li>
+			<li><a href=Italy.html>이탈리아</a></li>
+			<li><a href=CustomerServiceCenter.html>고객센터</a></li>
+			<li onClick="popup()">예약하기</li>
+		</ul>
+	</nav>
+	<aside>
+		<img src="../image/Asia.jpg" width=100% title="아시아"> <img
+			src="../image/North.jpg" width=100% title="미주"> <img
+			src="../image/Latin.jpg" width=100% title="라틴아메리카"> <img
+			src="../image/Africa.jpg" width=100% title="아프리카"> <img
+			src="../image/Austrailia.jpg" width=100% title="호주">
+	</aside>
+	<div>
+		<h2 id="rome">로마</h2>
+			<ul>
+				<li>과거 로마 제국의 수도로서 유럽의 중심이자 세계의 수도라고 불린 도시</li>
+				<li>수많은 유적들과 종교미술을 관람할 수 있는 곳</li>
+			</ul> 
+			<img src="../image/Colosseum.jpg" title="콜로세움"> 
+			<img src="../image/Vatican.jpg" title="바티칸"> 
+			<img src="../image/Trevi.jpg" title="트레비분수">
+	</div>
+	<br>
+
+	<div>
+		<h2 id="florence">피렌체</h2>
+			<ul>
+				<li>르네상스의 중심 도시이자 토스카나 여행의 중심</li>
+				<li>도시 전체가 문화유산</li>
+				<li>아그리투리스모, 쿠킹클래스 등 다양한 체험 가능</li>
+				<ul>
+					<li>아그리투리스모란?
+					<button>Click!</button>
+					<span><br>도시에서 벗어나 농촌에서 한가롭게 주말이나 휴가를 보낼 수 있는 장소.<br>
+					목장이나 농장을 현대식으로 개조하고 주인이 직접 재배한 농산물로 만든 음식을 제공</span></li> 
+					<li><a href="https://www.agriturismo.it/en/" target="_blank">아그리투리스모
+							예약 바로가기</a></li>
+				</ul>
+			</ul> 
+			<img src="../image/Florence.jpg" title="피렌체 전경"> 
+			<img src="../image/Pisa.jpg" title="피사의 사탑"> 
+			<img src="../image/Toscana.jpg" title="토스카나 아그리투리스모">
+	</div>
+	<br>
+
+	<div>
+		<h2 id="venice">베네치아</h2>
+			<ul>
+				<li>곤돌라로 이동하는 물의 도시</li>
+				<li>아이유 MV 촬영지</li>
+				<li>최근 각광받는 돌로미티로 가기 위한 거점 도시</li>
+			</ul> 
+			<img src="../image/Gondola.jpg" title="곤돌라"> 
+			<img src="../image/Burano.jpg" title="부라노섬"> 
+			<img src="../image/Dolomite.jpg" title="돌로미티">
+	</div>
+	
+	<a href="#"><img src="../image/화살표.jpg" width = 50px height = 50px></a>
+</body>
+</html>

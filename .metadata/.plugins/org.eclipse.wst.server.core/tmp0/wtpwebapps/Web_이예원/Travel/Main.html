@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Main</title>
+<script type="text/javascript">
+	function popup() {
+		window.open('Reservation.html','reservation','width=300, height=600');
+	}
+</script>
+<style type="text/css">
+nav {
+	background-color: cyan;
+	height: 8%;
+	width: 75%;
+	font-size: 1.5em;
+}
+
+nav li {
+	display: inline-block; /* 요소들을 인라인 블록으로 표시 */
+	margin: 0 2%; /* 좌우 여백을 화면 너비의 2%로 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	font-size: 100%;
+}
+
+aside {
+	width: 20%;
+	border: 1px solid #666;
+	background-color: #ffd8d8;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+.France {
+	float: right; 
+	margin: 10px;
+}
+
+.UK, .Italy {
+	float: left;
+	margin: 10px;
+}
+
+
+#UK, #France, #Italy {
+	height: 200px;
+	margin-bottom: 20px;
+	width: 50%;
+}
+
+div h3{
+	line-height: 2;
+}
+
+nav a {
+	text-decoration: none; 
+	line-height: 40px;
+}
+
+nav a:hover {
+	color: yellow; 
+}
+nav li:last-child {
+	color: red;
+}
+
+section a {
+	text-decoration: none; 
+	line-height: 40px;
+}
+
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<nav>
+		<ul id="topMenu">
+			<li><a href="#">Home</a></li>
+			<li><a href=UK.html>영국</a></li>
+			<li><a href=France.html>프랑스</a></li>
+			<li><a href=Italy.html>이탈리아</a></li>
+			<li><a href=CustomerServiceCenter.html>고객센터</a></li>
+			<li onClick="popup()">예약하기</li>
+		</ul>
+	</nav>
+	<aside>
+		<img src="../image/Asia.jpg" width=100% title="아시아"> <img
+			src="../image/North.jpg" width=100% title="미주"> <img
+			src="../image/Latin.jpg" width=100% title="라틴아메리카"> <img
+			src="../image/Africa.jpg" width=100% title="아프리카"> <img
+			src="../image/Austrailia.jpg" width=100% title="호주">
+	</aside>
+	<section>
+		<div id="UK">
+			<a href="UK.html"><img src="../image/LondonEye.jpg" width=60% height=100% title="영국 여행 바로가기" class="UK"></a>
+			
+			<h1>
+				<a href="UK.html">영국</a>
+			</h1>
+			
+			<h3>
+				<a href="UK.html#london">런던</a>
+			</h3>
+			<h3>
+				<a href="UK.html#edinburgh">에든버러</a>
+			</h3>
+			
+		</div>
+		<div id="France">
+			<a href="France.html"><img src="../image/EffelTower.jpg" width=60% height=100% title="프랑스 여행 바로가기" class="France"></a>
+			
+			<h1>
+				<a href="France.html">프랑스</a>
+			</h1>
+			<h3>
+				<a href="France.html#paris">파리</a>
+			</h3>
+			<h3>
+				<a href="France.html#nice">기타 소도시</a>
+			</h3>
+			
+		</div>
+		<div id="Italy">
+			<a href="Italy.html"><img src="../image/Pisa.jpg" width=60% height=100% title="이탈리아 여행 바로가기" class="Italy"></a>
+
+			<h1>
+				<a href="Italy.html">이탈리아</a>
+			</h1>
+			<h3>
+				<a href="Italy.html#rome">로마</a>
+			</h3>
+			<h3>
+				<a href="Italy.html#florence">피렌체</a>
+			</h3>
+			<h3>
+				<a href="Italy.html#venice">베네치아</a>
+			</h3>
+
+		</div>
+
+		<a href="#"><img src="../image/화살표.jpg" width = 50px height = 50px class = "top"></a>
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		width : 200px;
+		height : 200px; 
+		background-color: yellow;
+	}
+</style>
+<script type="text/javascript">
+	var f_selarr = new Array('한식','중식','일식','외국식')
+	var s_selarr = [
+					['김치찌개','된장찌개','불고기','설렁탕','뼈해장국'],
+					['탕수육','팔보채','깐풍기','볶음밥'],
+					['초밥','덮밥','문어구이','스시','우동'],
+					['스테이크','캐비어','푸아그라','파스타','월남쌈']
+					];
+
+/* 	var s_selarr2 = new Array(4);
+	s_selarr2[0] = new Array('김치찌개','된장찌개','불고기','설렁탕','뼈해장국');
+	s_selarr2[1] = new Array('탕수육','팔보채','깐풍기','볶음밥');
+	s_selarr2[2] = new Array('초밥','덮밥','문어구이','스시','우동');
+	s_selarr2[3] = new Array('스테이크','캐비어','푸아그라','파스타','월남쌈');
+ */
+	
+
+	function init() {
+		document.myform.first.options[0] = new Option("선택");
+		document.myform.second.options[0] = new Option("선택");
+		for (i=0;i<f_selarr.length;i++) {
+			document.myform.first.options[i+1] = new Option(f_selarr[i]);
+		}
+	}
+ 
+ 	function firstChange() {
+  		//alert("firstChange"); 
+  		findex = document.myform.first.selectedIndex;
+  		fvalue = document.myform.first.options[findex].value;
+  		
+  		for(i=document.myform.second.length-1;i>0;i--) { //기존 값 지우기 (뒤에서부터 지워야 문제 발생하지 않음)
+  			document.myform.second.options[i+1] = null;
+  		}
+  		
+  		//alert(findex+"/"+fvalue);
+  		for(i=0;i<s_selarr[findex-1].length;i++) {
+  			document.myform.second.options[i+1] = new Option(s_selarr[findex-1][i]);
+  		}
+ 	}
+ 	
+ 	function secondChange() {
+  		sindex = document.myform.second.selectedIndex;
+  		svalue = document.myform.second.options[sindex].value;
+ 		
+  		myarea = document.getElementById("result");
+  		myarea.innerHTML = fvalue+"/"+svalue;
+ 	}
+ 	
+ 	
+</script>
+</head>
+<body onLoad = "init()">
+	<form name = "myform">
+		<select id = "first" style="width:70px" onChange = "firstChange()"></select>    <!-- name 대신 id 속성 이용해도 됨 --> <!-- style로 너비 넓힘 -->
+		<select id = "second" style="width:70px" onChange = "secondChange()"></select>
+	</form>
+	<div id = "result"></div>
+</body>
+</html>

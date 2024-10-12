@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		var man = new Object();
+		man.name = "aaa";
+		man.age = 30;
+		man.birthday = new Date(2000,01,01);
+		
+		
+		var jumsu = new Object();
+		jumsu.kor = 50;
+		jumsu.eng = 60;
+		jumsu.math = 70;
+		
+		man.jumsu = jumsu;
+		
+		console.log(man.name);
+		console.log(man.age);
+		console.log(man.birthday);
+		
+		console.log(jumsu.kor);
+		console.log(jumsu.eng);
+		console.log(jumsu.math);
+		
+		console.log(man.jumsu.kor);
+		console.log(man.jumsu.eng);
+		console.log(man.jumsu.math);
+		
+		var man2 = {
+				name : "김수현",
+				age : 50,
+				birthday : new Date(2020,3,20),
+				jumsu : {
+					kor : 40,
+					eng : 80,
+					math : 30
+				},
+				study:function(subject){
+					console.log(subject+"를 공부합니다.")
+				}
+			};
+		
+		console.log(man2.name);
+		console.log(man2.birthday);
+		console.log(man2.jumsu.math);
+		man2.study('jQuery');
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

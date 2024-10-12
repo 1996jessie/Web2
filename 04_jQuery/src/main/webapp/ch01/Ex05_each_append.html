@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var sum = 0, sum0 = 0, sum1 = 0, sum2 = 0, sum3 = 0;
+		$('td').each(function(){ //모든 td칸 각각 보자
+			//alert($(this).text()); //지금 만난 그 td칸을 객체로 만들어서 그 객체의 글자 가져오기
+			sum += eval($(this).text());
+		});
+		
+ 		$('td:first-child').each(function() {
+			sum0 += eval($(this).text());
+		});
+		
+		$('td:nth-child(2)').each(function() {
+			sum1 += eval($(this).text());
+		});
+		
+ 		$('td:last-child').each(function() {
+			sum2 += eval($(this).text());
+		});
+ 		
+   		$('tr:eq(1) td').each(function(){ //1,2,3의 합
+ 			sum3 += eval($(this).text());
+ 		}); 
+		
+		$('.result1').append(sum); //원하는 자리에 붙여넣기
+		$('.result2').append(sum0);
+		$('.result3').append(sum1);
+		$('.result4').append(sum2);
+		$('.result5').append(sum3);
+		
+	});
+</script>
+</head>
+<body>
+	<table border = "1">
+		<tr>
+			<th width = "100"> 0열 </th>
+			<th width = "100"> 1열 </th>
+			<th width = "100"> 2열 </th>
+		</tr>
+		<tr>
+			<td> 1 </td>
+			<td> 2 </td>
+			<td> 3 </td>
+		</tr>
+		<tr>
+			<td> 4 </td>
+			<td> 5 </td>
+			<td> 6 </td>
+		</tr>
+		<tr>
+			<td> 7 </td>
+			<td> 8 </td>
+			<td> 9 </td>
+		</tr>
+	</table>
+	
+	<br><br>
+	
+	<div class="result1"> 전체의 합: </div>
+	<div class="result2"> 0열의 합: </div>
+	<div class="result3"> 1열의 합: </div>
+	<div class="result4"> 2열의 합: </div>
+	<div class="result5"> 0행의 합: </div>
+	
+
+</body>
+</html>

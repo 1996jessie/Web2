@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>예약문의</h1>
+	<form action = "result.jsp">
+		<p>
+			<label>작성자</label>
+			<input type = "text" name = "userName" value = "아이유">
+			<!-- input : 텍스트필드 -->
+			<!-- value : 기본값 (이후 변경 가능) -->
+		</p>
+		
+		<p>
+			<label>비밀번호</label>
+			<input type = "password" name = "userPw">
+			<!-- type = "password" 하면 숨길 수 있음 -->
+		</p>
+		
+		<p>
+			<label>제목</label>
+			<input type = "text" name = "userTitle">
+		</p>
+		
+		<p>
+			<label>이메일</label>
+			<input type = "email" name = "userEmail">
+			<!-- @ 안 넣은 상태에서 submit 누르면 올바른 전자메일 주소 입력해야 합니다 오류 발생(될 때까지)-->
+		</p>
+		
+		<p>
+			<label>투숙날짜</label>
+			<input type = "date" name = "userDate">
+			<!-- date : 외부 브라우저에서 실행하면 달력 나옴 -->
+		</p>
+		
+		<p>
+			<label>투숙인원</label>
+			<input type = "number" name = "userNumber">
+			<!-- 문자 넣을 수 없음. 숫자만 넣을 수 있도록 화살표로 updown 가능 -->
+		</p>
+		
+		<p>
+			<label>예약할 객실을 선택하세요</label><br>
+			<fieldset style = "width:20%;"> <!-- fieldset : 테두리 -->
+				<legend>객실 선택</legend>
+				<input type = "radio" name = "userRoom">Single
+				<input type = "radio" name = "userRoom">Double
+				<input type = "radio" name = "userRoom">Twin
+				<!-- 세개 중 하나만 선택 가능한 라디오버튼 출력됨 -->
+				<!-- 이름 같으면 하나만 체크 가능 / 이름 다르면 중복 체크 가능 -->
+			</fieldset>
+		</p>
+		
+		<p>
+			<label>예약자 성별을 선택하세요.</label><br>
+				<input type = "radio" name = "userGender"> 남자
+				<input type = "radio" name = "userGender"> 여자
+		</p>
+		
+		<p>
+			<label>Email</label>
+			<input type = "text" name = userEmail1"> @
+			<select name = "userEmail2">
+				<option>daum.net</option>
+				<option>naver.com</option>
+				<option>gmail.com</option>
+				<option>abc.net</option>
+			</select>
+			<!-- option : 선택옵션 -->
+		</p>
+
+		<p>
+			<label>좋아하는 색상 선택</label>
+			<input type = "color" name = "userColor">
+			<!-- color : 색상표 -->
+		</p>
+		
+		<p>
+			<label>평점</label>
+			<input type = "range" name = "userPoint" min = "1" max = "10" step = "1" value = "5">
+			<!-- 범위 -->
+		</p>
+		
+		<p>
+			<label>옵션</label>
+			<fieldset style = "width:20%;"> 
+				<legend>옵션 선택</legend>
+				<input type = "checkbox" name = "userOption"> 조식
+				<input type = "checkbox" name = "userOption"> 바베큐
+				<input type = "checkbox" name = "userOption"> 픽업 서비스
+				<!-- checkbox : 사각형 중복 가능한 체크박스 -->
+			</fieldset>
+		</p>
+		
+		<p>
+			<label>작성자 사진</label>
+			<input type = "file" name = "userFile">
+			<!-- file : 열기 창을 띄워서 사진을 선택할 수 있도록 함 -->
+		</p>
+		
+		<p>
+			<label>글내용</label><br>
+			<textarea name = "userMessage" rows = "5" cols = "30">문의 사항을 입력하세요</textarea>
+			<!-- textarea : rows, cols로 크기 조절, value 속성 없음. 기본값은 태그와 태그 사이에 써야 함 -->
+		</p>
+		
+				
+		<p>
+			<input type = "submit" value = "전송">
+			<!-- submit : 버튼 만들어짐 -->
+			<!-- jsp로 값 전송 -->
+			
+			<input type = "button" value = "확인">
+			<input type = "reset" value = "초기화">
+			<!-- reset : value로 넣어놓은 값 외에 나머지는 다 초기화 -->
+		</p>
+	
+	</form>
+</body>
+</html>

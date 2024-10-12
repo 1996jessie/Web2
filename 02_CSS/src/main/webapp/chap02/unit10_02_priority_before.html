@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>선택자간의 우선 순위 알아보기</title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body{
+				background-color: black;
+				color: cyan;
+				font-family: "맑은 고딕", 돋움, "Times New Roman"
+			}
+			#bgPage1{
+				color : white;
+			}
+			.bgPage2{
+				color : lime; 
+			}
+			.blueText{
+				color : blue;
+				background-color : #ffc; 
+			}
+			span{ /* 클래스 선택자가 태그 선택자보다 우선순위가 높아서 적용되지 않음 */
+				color : red !important;
+				/* !important 하면 최우선순위 */
+			} 
+		</style>
+	</head>
+
+	<body id="bgPage1">
+		<h1>선택자간의 우선 순위 알아보기</h1>
+		<hr />
+		<div>
+			<h2>굴 이야기</h2> 
+			<p class="bgPage2">
+				일명 <span class="blueText">석화</span>라고도 하는데 멀리서 보면 따낸 굴조개 껍질이 바위면에 하얗게 붙어있어서 마치 <span class="blueText">꽃무더기</span>를 연상하게 한다. 굴은 <span class="blueText">3대 영양소</span>는 물론 비타민, 미네랄에 이르기까지 풍부한 영양분을 함유하고 있어서 완전식품인 우유와 별로 다를 바가 없다.
+			</p>
+		</div>
+	</body>
+</html>
+
+<!-- 
+<선택자>
+클래스(.), 
+아이디(#), 
+자식(>), 
+자손(공백), 
+속성(태그[속성=값], 
+태그(태그), 
+가상클래스(태그:~), 
+전체(*), 
+그룹(,)
+
+<우선순위>
+!important>인라인 스타일>아이디>클래스/속성/가상>태그>전체
+ -->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			table{
+				margin : 20px auto;
+				border-collapse: seperate;
+				border-spacing: 7px;
+				text-align: center;
+				empty-cells:hide;  
+			}
+			table caption, table th, table td {
+				border: 1px solid blue;
+				border-radius: 10px; 
+				padding: 10px; 
+			}
+			caption{
+				background: blue;
+				color: white;
+				padding: 10px;   
+				font-weight: bold;
+			}
+			th{
+				background: skyblue;
+				color: white;
+				border: none;
+			}
+
+			td:first-child {
+				background: yellow; 
+				color: red;
+			}
+			tr:nth-child(5) {
+				background: cyan;
+				color: black;
+			}
+			#a {
+				background: cyan;
+				color: black; 
+			}
+/* 			
+			th:first-child {
+				background: white;
+				border: none;
+			}
+			td:nth-child(5) {
+				border: none;
+			} 
+*/
+			
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>3월 1주 식단표</caption>
+				<tr>
+					<th></th>
+					<th>3/1</th>
+					<th>3/2</th>
+					<th>3/3</th>
+					<th>3/4</th>
+					<th>3/5</th>
+				</tr>
+				<tr>
+					<td>아침</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td></td>
+					<td>밥<br>국<br>반찬</td>
+				</tr>
+				<tr>
+					<td>점심</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td></td>
+					<td>밥<br>국<br>반찬</td>
+				</tr>
+				<tr>
+					<td>저녁</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td>밥<br>국<br>반찬</td>
+					<td></td>
+					<td>밥<br>국<br>반찬</td>
+				</tr>
+				<tr>
+					<td colspan = "6" id = "a">3월 4일은 임시 휴무입니다.</td>
+				</tr>
+		</table>
+	</body>
+</html>

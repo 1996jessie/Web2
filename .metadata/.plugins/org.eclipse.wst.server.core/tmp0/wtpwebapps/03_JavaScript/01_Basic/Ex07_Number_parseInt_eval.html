@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	var su = prompt("정수를 입력하세요.",10);
+	document.write(su+"/"+typeof(su)+"<br>");
+	document.write(su+3+"<br>"); //"10"+3
+	document.write(Number(su+3)+"<br>"); //Number("103")
+	document.write(Number(su)+3+"<br>"); //Number("10") > 10+3
+	document.write(parseInt(su)+3+"<br>"); //parseInt("10") > 10+3
+	document.write(parseInt(12.7)+3+"<br>"); //parseInt("12") > 10+3
+	document.write(Number(su)+3+"<br>"); //Number("10") > 10+3
+	document.write(eval(su)+3+"<br>"); //eval("10") > 10+3
+	document.write(+su+3+"<br>"); //+"10" > 10+3
+	
+	document.write("---------------<br>");
+	document.write("15+3*2"+ "<br>");
+	document.write(parseInt("15+3*2")+ "<br>"); //15까지만 출력됨(문자가 나오면 바로 실행 멈춤)
+	document.write(Number("15+3*2")+ "<br>"); //NaN : Not a Number
+	document.write(eval("15+3*2")+ "<br>"); //계산 다 됨
+
+	
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

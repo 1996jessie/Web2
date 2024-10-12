@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- extensible markup language -->
+
+<family>
+	<father>
+		<name></name>
+		<age></age>
+	</father>
+	<mother name="" age="">
+		
+	</mother>
+	<son order="1">
+	</son>
+	<son order="2">
+	</son>
+	<daughter>
+	
+	</daughter>
+</family>

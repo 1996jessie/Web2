@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	int[][] arr = {{10,20},{30,40,50}};
+	int[][] arr = new int[][] {{10,20},{30,40,50}};
+	int[][] arr = new int [2][];
+	arr[0] = new int[2];
+	arr[1] = new int[3];
+	arr[0][0] = 10;
+	arr[0][1] = 20;
+	arr[1][0] = 30;
+	arr[1][1] = 40;
+	arr[1][2] = 50; */
+	
+	var arr = [['rose','tulip','lily'],['윤아','서현','태연','효연','티파니']];
+	
+	var arr2 = new Array(2);
+	arr2[0] = new Array('rose','tulip','lily');
+	arr2[1] = new Array('윤아','서현','태연','효연','티파니');
+	
+	var arr3 = new Array(2);
+	arr3[0] = new Array();
+	arr3[1] = new Array();
+	arr3[0][0] = 'rose';
+	arr3[1][4] = '티파니';
+	
+	for(i=0;i<arr.length;i++) {
+		for(j=0;j<arr[i].length;j++) {
+			document.write(arr[i][j] + " ");
+		}
+		document.write("<br>");
+	}
+	
+	for(i=0;i<arr.length;i++) { //2차원 배열 안에 있는 1차원배열 통째로 출력해라
+		document.write(arr[i]+"<br>"); 
+	}
+	
+ 	for(i in arr) { //행번호
+ 		for(j in arr[i]) { //방번호
+ 			document.write(arr[i][j]+" ");
+ 		}
+ 		document.write("<br>");
+ 	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

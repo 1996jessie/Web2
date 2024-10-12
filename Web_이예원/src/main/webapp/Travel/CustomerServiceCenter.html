@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	function popup() {
+		window.open('Reservation.html','reservation','width=300, height=600');
+	}
+	$(function(){
+		$('input[name = name]').focus();
+	});
+	function check() {
+		var str = "입력한 문의사항은" + "\n";
+		
+		if($('input[name = name]').val() == "") {
+			alert("이름 누락");
+			$('input[name = name]').focus();
+			return false;
+		}
+		if($('input[name = password]').val() == "") {
+			alert("비밀번호 누락");
+			$('input[name = password]').focus();
+			return false;
+		}
+		if($('input[name = email1]').val() == "") {
+			alert("이메일 주소 누락");
+			$('input[name = email1]').focus();
+			return false;
+		}
+		if($("select[name = email2]").val() == "") {
+			alert("이메일 뒷주소 누락");
+			return false;
+		}
+		if($("select[name = phone1]").val() == "") {
+			alert("phone1 누락");
+			return false;
+		}
+		if($('input[name = phone2]').val() == "") {
+			alert("phone2 누락");
+			$('input[name = phone2]').focus();
+			return false
+		}
+		if(isNaN($('input[name = phone2]').val())) {
+			alert("phone2에 숫자만 입력해야 함");
+			$('input[name=phone2]').select();
+			return false;
+		}
+		if($('input[name = phone3]').val() == "") {
+			alert("phone3 누락");
+			$('input[name = phone3]').focus();
+			return false
+		}
+		if(isNaN($('input[name = phone3]').val())) {
+			alert("phone3에 숫자만 입력해야 함");
+			$('input[name=phone3]').select();
+			return false;
+		}
+		
+		if($('textarea[name = userMessage]').val() == "") {
+			alert("문의사항 누락");
+			$('textarea[name = userMessage]').focus();
+			return false;
+		}
+		
+		str += "성함 : " + $('input[name = name]').val() + "\n"
+		str += "비밀번호 : " + $('input[name = password]').val() + "\n"
+		str += "이메일 : " + $('input[name = email1]').val() + '@' + $('select[name = email2]').val() + "\n"
+		str += "전화번호 : " + $('select[name = phone1]').val() + "-" + $('input[name = phone2]').val() + "-" + $('input[name = phone3]').val()+ "\n";
+		str += "문의사항: " + $('textarea[name = userMessage]').val();
+		alert(str); 
+	}
+</script>
+<style type="text/css">
+nav {
+	background-color: cyan;
+	height: 8%;
+	width: 75%;
+	font-size: 1.5em;
+}
+
+nav li {
+	display: inline-block; /* 요소들을 인라인 블록으로 표시 */
+	margin: 0 2%; /* 좌우 여백을 화면 너비의 2%로 설정 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	font-size: 100%;
+}
+
+aside {
+	width: 20%;
+	border: 1px solid #666;
+	background-color: #ffd8d8;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+nav a {
+	text-decoration: none; /* 밑줄 없애기 */
+	line-height: 40px;
+}
+
+nav a:hover {
+	color: yellow; /* 호버 상태일 때 텍스트 색상 */
+}
+nav li:last-child {
+	color: red;
+}
+
+#Service {
+	color: orange;
+}
+</style>
+<title>고객센터</title>
+</head>
+<body>
+	<nav>
+		<ul id="topMenu">
+			<li><a href=Main.html>Home</a></li>
+			<li><a href=UK.html>영국</a></li>
+			<li><a href=France.html>프랑스</a></li>
+			<li><a href=Italy.html>이탈리아</a></li>
+			<li><a href=CustomerServiceCenter.html>고객센터</a></li>
+			<li onClick="popup()">예약하기</li>
+		</ul>
+	</nav>
+	<aside>
+		<img src="../image/Asia.jpg" width=100% title="아시아"> <img
+			src="../image/North.jpg" width=100% title="미주"> <img
+			src="../image/Latin.jpg" width=100% title="라틴아메리카"> <img
+			src="../image/Africa.jpg" width=100% title="아프리카"> <img
+			src="../image/Austrailia.jpg" width=100% title="호주">
+	</aside>
+	<section>
+		<h1>문의사항</h1>
+		<h3>문의하실 내용을 남겨주시면 상담사가 확인 후 연락드리겠습니다.</h3>
+			<form action="ask.jsp">
+				<p>
+					<label>예약자 성함</label> <input type="text" name="name">
+				</p>
+				<p>
+					<label>비밀번호</label> <input type="password" name="password">
+				</p>
+				<p>
+					<label>이메일</label> <input type="text" name="email1"> @ <select
+						name="email2">
+						<option value = "">선택</option>
+						<option value = "daum.net">daum.net</option>
+						<option value = "naver.com">naver.com</option>
+						<option value = "gmail.com">gmail.com</option>
+					</select>
+				</p>
+	
+				<p>
+					<select name = "phone1">
+						<option value = ""> 선택 </option> 
+						<option value = "010"> 010 </option> 
+						<option value = "011"> 011 </option>
+						<option value = "017"> 017 </option>
+					</select> - 
+					<input type = "text" name = "phone2" size = "4" maxlength = "4"> -
+					<input type = "text" name = "phone3" size = "4" maxlength = "4">
+				</p>
+	
+				<p>
+					<label>문의사항</label><br>
+					<textarea name="userMessage" rows="10" cols="100"></textarea>
+				</p>
+	
+				<p>
+					<input type="submit" value="제출" onClick="return check()">
+				</p>
+			</form>
+	</section>
+</body>
+</html>
